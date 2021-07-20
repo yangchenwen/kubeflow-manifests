@@ -3801,6 +3801,6 @@ spec:
         - /root/manager
         - -mode=in-cluster
         image: registry.cn-shenzhen.aliyuncs.com/tensorbytes/kubeflow-xgboost-operator:v0.2.0-c368f
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: xgboost-operator
       serviceAccountName: xgboost-operator-service-account

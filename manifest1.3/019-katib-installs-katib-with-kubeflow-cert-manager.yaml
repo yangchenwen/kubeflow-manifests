@@ -380,7 +380,7 @@ data:
               containers:
                 - name: pytorch
                   image: docker.io/kubeflowkatib/pytorch-mnist:v1beta1-45c5727
-                  imagePullPolicy: Always
+                  imagePullPolicy: IfNotPresent
                   command:
                     - "python3"
                     - "/opt/pytorch-mnist/mnist.py"
@@ -395,7 +395,7 @@ data:
               containers:
                 - name: pytorch
                   image: docker.io/kubeflowkatib/pytorch-mnist:v1beta1-45c5727
-                  imagePullPolicy: Always
+                  imagePullPolicy: IfNotPresent
                   command:
                     - "python3"
                     - "/opt/pytorch-mnist/mnist.py"

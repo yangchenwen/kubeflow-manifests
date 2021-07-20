@@ -384,7 +384,7 @@ spec:
         - configMapRef:
             name: profiles-config-46c7tgh6fd
         image: registry.cn-shenzhen.aliyuncs.com/tensorbytes/notebooks-access-management:v1.3.0-rc.0-a869b
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /metrics
@@ -408,7 +408,7 @@ spec:
         - configMapRef:
             name: profiles-config-46c7tgh6fd
         image: registry.cn-shenzhen.aliyuncs.com/tensorbytes/notebooks-profile-controller:v1.3.0-rc.0-ce3b3
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
             path: /metrics

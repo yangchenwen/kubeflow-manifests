@@ -77,7 +77,7 @@ spec:
         - configMapRef:
             name: oidc-authservice-parameters
         image: registry.cn-shenzhen.aliyuncs.com/tensorbytes/kubeflow-oidc-authservice:28c59ef-c8870
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: authservice
         ports:
         - containerPort: 8080
