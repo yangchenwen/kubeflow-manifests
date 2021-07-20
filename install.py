@@ -2,7 +2,7 @@
 #coding:utf-8
 import os
 import subprocess
-
+import time
 import patch
 
 
@@ -17,6 +17,7 @@ def install(path):
             out = p.stdout.read()
             print(out)
             p.wait()
+            time.sleep(10)
 
 
 if __name__ == '__main__':
