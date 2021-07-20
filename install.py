@@ -19,10 +19,11 @@ def install(path):
             p.wait()
 
 
-# 安装文件
-path = "./manifest1.3"
-install(path)
+if __name__ == '__main__':
+    # 安装文件
+    path = "./manifest1.3"
+    install(path)
 
-# 安装patch
-patchPath = "./patch"
-patch.patchInstall(patchPath)
+    # 安装patch
+    patchPath = "./patch"
+    patch.patchInstall(patchPath)

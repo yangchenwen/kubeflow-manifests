@@ -25,6 +25,7 @@ def patchInstall(path):
             p.wait()
 
 
-# 安装patch
-patchPath = "./patch"
-patchInstall(patchPath)
+if __name__ == '__main__':
+    # 安装patch
+    patchPath = "./patch"
+    patchInstall(patchPath)
