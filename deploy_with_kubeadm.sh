@@ -25,6 +25,7 @@ yum install ntpdate -y
 ntpdate ntp1.aliyun.com
 
 # 开启ipvs
+yum install -y ipvsadm
 cat > /etc/sysconfig/modules/ipvs.modules <<EOF
 #!/bin/bash
 modprobe -- ip_vs
