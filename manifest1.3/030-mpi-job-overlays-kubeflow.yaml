@@ -405,6 +405,6 @@ spec:
         - --kubectl-delivery-image
         - mpioperator/kubectl-delivery:latest
         image: registry.cn-shenzhen.aliyuncs.com/tensorbytes/mpioperator-mpi-operator:latest-d32b4
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         name: mpi-operator
       serviceAccountName: mpi-operator
