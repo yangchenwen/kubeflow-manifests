@@ -245,6 +245,6 @@ spec:
             fieldRef:
               fieldPath: metadata.name
         image: registry.cn-shenzhen.aliyuncs.com/tensorbytes/kubeflow-mxnet-operator:v1.1.0-9863e
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: mxnet-operator
       serviceAccountName: mxnet-operator
