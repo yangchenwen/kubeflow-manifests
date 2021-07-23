@@ -9,7 +9,7 @@ def uninstall(path):
         for f in files:
             installfile = root + "/" + f
             cmd = "kubectl delete -f {installfile}".format(installfile=installfile)
-            print('========', cmd, '========')
+            print(cmd)
             p = subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE)
             out = p.stdout.read()
             print(out)

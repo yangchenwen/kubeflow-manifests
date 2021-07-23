@@ -14,15 +14,18 @@ def patchInstall(path):
         for f in files:
             installfile = root + "/" + f
             cmd_delete = "kubectl delete -f {installfile}".format(installfile=installfile)
+            print(cmd_delete)
             p = subprocess.Popen(cmd_delete,shell=True,stdout=subprocess.PIPE)
             out = p.stdout.read()
             print(out)
             p.wait()
             cmd_apply = "kubectl apply -f {installfile}".format(installfile=installfile)
+            print(cmd_apply)
             p = subprocess.Popen(cmd_apply,shell=True,stdout=subprocess.PIPE)
             out = p.stdout.read()
             print(out)
             p.wait()
+            time.sleep(10)
 
 
 if __name__ == '__main__':
