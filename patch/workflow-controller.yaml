@@ -14,7 +14,7 @@ data:
       secretKeySecret:
         name: mlpipeline-minio-artifact
         key: secretkey
-  containerRuntimeExecutor: k8sapi
+#  containerRuntimeExecutor: k8sapi
 kind: ConfigMap
 metadata:
   labels:
