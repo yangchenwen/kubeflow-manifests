@@ -142,7 +142,7 @@ spec:
               key: password
               name: mysql-secret
         image: registry.cn-shenzhen.aliyuncs.com/tensorbytes/ml-pipeline-cache-server:1.5.0-rc.2-a44df
-        imagePullPolicy: Always
+        imagePullPolicy: IfNotPresent
         name: server
         ports:
         - containerPort: 8443
