@@ -259,7 +259,7 @@ data:
             - "--run-validation"
             - "--skip-rule-apply"
             {{ end -}}
-            imagePullPolicy: "{{ valueOrDefault .Values.global.imagePullPolicy `Always` }}"
+            imagePullPolicy: "{{ valueOrDefault .Values.global.imagePullPolicy `IfNotPresent` }}"
           {{- if .ProxyConfig.ProxyMetadata }}
             env:
             {{- range $key, $value := .ProxyConfig.ProxyMetadata }}
@@ -328,7 +328,7 @@ data:
           {{- else }}
             image: "{{ .Values.global.hub }}/{{ .Values.global.proxy_init.image }}:{{ .Values.global.tag }}"
           {{- end }}
-            imagePullPolicy: "{{ valueOrDefault .Values.global.imagePullPolicy `Always` }}"
+            imagePullPolicy: "{{ valueOrDefault .Values.global.imagePullPolicy `IfNotPresent` }}"
             resources: {}
             securityContext:
               allowPrivilegeEscalation: true
@@ -492,7 +492,7 @@ data:
             - name: {{ $key }}
               value: "{{ $value }}"
             {{- end }}
-            imagePullPolicy: "{{ valueOrDefault .Values.global.imagePullPolicy `Always` }}"
+            imagePullPolicy: "{{ valueOrDefault .Values.global.imagePullPolicy `IfNotPresent` }}"
             {{ if ne (annotation .ObjectMeta `status.sidecar.istio.io/port` .Values.global.proxy.statusPort) `0` }}
             readinessProbe:
               httpGet:
