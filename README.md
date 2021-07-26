@@ -15,7 +15,7 @@ git clone https://github.com/yangchenwen/kubeflow-manifests.git
 **2.安装StorageClass和local-path-provisioner**
 ```shell
 cd kubeflow-manifests
-kubect apply -f local-path/local-path-storage.yaml
+kubectl apply -f local-path/local-path-storage.yaml
 ```
 
 **3.安装kubeflow组件**
