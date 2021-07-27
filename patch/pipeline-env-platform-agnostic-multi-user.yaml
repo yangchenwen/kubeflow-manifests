@@ -303,7 +303,7 @@ data:
   autoUpdatePipelineDefaultVersion: "true"
   bucketName: mlpipeline
   cacheDb: cachedb
-  cacheImage: busybox
+  cacheImage: busybox:uclibc
   cronScheduleTimezone: UTC
   dbHost: mysql
   dbPort: "3306"
