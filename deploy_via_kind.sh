@@ -61,7 +61,7 @@ mv ./kind /usr/bin/kind
 ## 安装git
 yum install -y git
 ## 下载安装kubeflow脚本
-git clone https://github.com/shikanon/kubeflow-manifests.git
+git clone https://github.com/yangchenwen/kubeflow-manifests.git
 
 ## 创建k8s
 cd kubeflow-manifests || exit
