@@ -690,7 +690,7 @@ data:
         "enabled": true,
         "externalIstiod": false,
         "hub": "docker.io/istio",
-        "imagePullPolicy": "",
+        "imagePullPolicy": "IfNotPresent",
         "imagePullSecrets": [],
         "istioNamespace": "istio-system",
         "istiod": {
@@ -725,6 +725,7 @@ data:
           "excludeOutboundPorts": "",
           "holdApplicationUntilProxyStarts": false,
           "image": "proxyv2",
+          "imagePullPolicy": "IfNotPresent",
           "includeIPRanges": "*",
           "logLevel": "warning",
           "privileged": false,
@@ -746,6 +747,7 @@ data:
         },
         "proxy_init": {
           "image": "proxyv2",
+          "imagePullPolicy": "IfNotPresent",
           "resources": {
             "limits": {
               "cpu": "2000m",
