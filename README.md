@@ -74,3 +74,15 @@ kubectl apply -f  manifest1.3/017-pipeline-env-platform-agnostic-multi-user.yaml
 kubectl apply -f patch/pipeline-env-platform-agnostic-multi-user.yaml
 kubectl apply -f patch/workflow-controller.yaml
 ```
+
+**5、katib运行时Pod NotReady**
+>解决：https://github.com/kubeflow/katib/issues/1577
+
+在训练样例的yaml文件的```.trialSpec.spec.template.metadata.annotations```节点下增加```sidecar.istio.io/inject: "false"```
+参考```example/kitab-random-example.yaml```
+
+**6、安装的Kale无法正常工作**
+>解决：https://github.com/kubeflow/pipelines/issues/4440
+```shell
+kubectl apply -f kale/kale-patch.yaml
+```
