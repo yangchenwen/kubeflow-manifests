@@ -654,7 +654,7 @@ spec:
             - /bin/bash
             - -c
             - mysqladmin ping -u root -p${MYSQL_ROOT_PASSWORD}
-          initialDelaySeconds: 30
+          initialDelaySeconds: 300
           periodSeconds: 10
           timeoutSeconds: 5
         name: katib-mysql
@@ -667,7 +667,7 @@ spec:
             - /bin/bash
             - -c
             - mysql -D ${MYSQL_DATABASE} -u root -p${MYSQL_ROOT_PASSWORD} -e 'SELECT 1'
-          initialDelaySeconds: 5
+          initialDelaySeconds: 50
           periodSeconds: 10
           timeoutSeconds: 1
         volumeMounts:

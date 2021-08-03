@@ -86,3 +86,30 @@ kubectl apply -f patch/workflow-controller.yaml
 ```shell
 kubectl apply -f kale/kale-patch.yaml
 ```
+
+**7、pod ```admission-webhook-deployment-xxx``` 报错：MountVolume.SetUp failed for volume "webhook-cert" : secret "webhook-certs" not found**
+>解决：
+```shell
+kubectl delete -f manifest1.3/021-admission-webhook-overlays-cert-manager.yaml
+kubectl apply -f manifest1.3/021-admission-webhook-overlays-cert-manager.yaml
+```
+
+**8、pod ```katib-controller-xxx``` 报错MountVolume.SetUp failed for volume "cert" : secret "katib-webhook-cert" not found**
+>解决：
+```shell
+kubectl apply -f manifest1.3/019-katib-installs-katib-with-kubeflow-cert-manager.yaml
+#查看katib-webhook-cert是否创建成功
+kubectl get secret katib-webhook-cert -n kubeflow
+#重启pod
+kubectl delete pod katib-controller-xxx -n kubeflow
+```
+
+**9、 pod ```kfserving-controller-manager-xxx```报错：MountVolume.SetUp failed for volume "cert" : secret "kfserving-webhook-server-cert" not found**
+>解决：
+```shell
+kubectl apply -f manifest1.3/018-kfserving-overlays-kubeflow.yaml
+#查看kfserving-webhook-server-cert是否创建成功
+kubectl get secret -A|grep kfserving-webhook-server-cert
+#重启pod
+kubectl delete pod  kfserving-controller-manager-xxx -n kubeflow
+```

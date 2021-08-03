@@ -60,7 +60,7 @@ spec:
       labels:
         app: nfs-client-provisioner
     spec:
-      serviceAccount: nfs-provisioner
+      serviceAccountName: nfs-provisioner
       containers:
         - name: nfs-client-provisioner
           image: registry.cn-hangzhou.aliyuncs.com/open-ali/nfs-client-provisioner
@@ -83,7 +83,7 @@ spec:
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
-  name: stateful-nfs
+  name: nfs-client
   namespace: default
   annotations: #添加为默认StorageClass
     storageclass.beta.kubernetes.io/is-default-class: "true"
