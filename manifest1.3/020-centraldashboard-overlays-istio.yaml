@@ -116,6 +116,11 @@ data:
           "icon": "assessment"
         },
         {
+          "link": "/models/",
+          "text": "Models",
+          "icon": "icons:send"
+        },
+        {
           "type": "item",
           "link": "/volumes/",
           "text": "Volumes",
