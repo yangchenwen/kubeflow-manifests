@@ -118,7 +118,7 @@ data:
         {
           "link": "/models/",
           "text": "Models",
-          "icon": "icons:send"
+          "icon": "icons:cloud-done"
         },
         {
           "type": "item",

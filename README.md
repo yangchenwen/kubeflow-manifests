@@ -23,6 +23,11 @@ kubectl apply -f local-path/local-path-storage.yaml
 python install.py
 ```
 
+**3.1 安装kfserving web-app及metrics监控组件**
+```shell
+kubectl apply -f kfserving
+```
+
 等待镜像拉取，由于涉及的镜像比较多，要20~30分钟左右，可以通过命令查看是否就绪：
 
 **4.查看结果**
@@ -112,4 +117,10 @@ kubectl apply -f manifest1.3/018-kfserving-overlays-kubeflow.yaml
 kubectl get secret -A|grep kfserving-webhook-server-cert
 #重启pod
 kubectl delete pod  kfserving-controller-manager-xxx -n kubeflow
+```
+
+**10、机器重启后authsevice-0报错**
+>解决：（前提是集群使用ipvs）
+```shell
+ipvsadm --clear
 ```
