@@ -124,3 +124,9 @@ kubectl delete pod  kfserving-controller-manager-xxx -n kubeflow
 ```shell
 ipvsadm --clear
 ```
+
+**11、Models菜单报not a valid page错误**
+>解决：重启下网关
+```shell
+kubectl delete pod istio-ingressgateway-xxx-xxx
+```
