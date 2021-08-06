@@ -136,3 +136,9 @@ kubectl delete pod istio-ingressgateway-xxx-xxx
 ```shell
 kubectl delete pod grafana-xxx-xxx
 ```
+
+**Models页面，删除model等操作报Could not find CSRF cookie XSRF-TOKEN错误**
+>解决：https://github.com/kubeflow/kubeflow/issues/5803
+```text
+kfserving-models-web-app-config环境变量加上`APP_SECURE_COOKIES=false`, 见001-kfseving-models-web-app.yaml
+```

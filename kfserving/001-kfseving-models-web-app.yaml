@@ -107,6 +107,7 @@ spec:
 apiVersion: v1
 data:
   APP_DISABLE_AUTH: "True"
+  APP_SECURE_COOKIES: "False"
 kind: ConfigMap
 metadata:
   labels:
