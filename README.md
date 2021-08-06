@@ -130,3 +130,9 @@ ipvsadm --clear
 ```shell
 kubectl delete pod istio-ingressgateway-xxx-xxx
 ```
+
+**安装kfserving中的组件后，Model server details页面未展示Metrics tab**
+>解决：重启grafana
+```shell
+kubectl delete pod grafana-xxx-xxx
+```
